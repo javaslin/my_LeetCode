@@ -15,7 +15,7 @@
           20     13
  */
 public class ConvertBST {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode right;
         TreeNode left;
@@ -39,6 +39,14 @@ public class ConvertBST {
         root.val += preNum;
         preNum = root.val;
         unPreOrder(root.left);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(5);
+        root.right = new TreeNode(13);
+        root.left = new TreeNode(2);
+        ConvertBST convertBST = new ConvertBST();
+        TreeNode r = convertBST.convertBST(root);
     }
 
 }
