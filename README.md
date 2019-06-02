@@ -1,1 +1,1 @@
-# LeetCode题解（Java实现-每日更新）
+# LeetCode题解（Java实现）
