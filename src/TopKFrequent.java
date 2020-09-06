@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 Top K Frequent Elements (Medium)](https://leetcode.com/problems/top-k-frequent-elements/description/)
@@ -35,5 +32,49 @@ public class TopKFrequent {
             }
         }
         return topK;
+    }
+
+
+    public int[] topKFrequent1(int[] nums, int k) {
+
+        //map存储num及其出现次数
+        Map<Integer, Integer> occ = new HashMap<>();
+        for (int num : nums) {
+            occ.put(num, occ.getOrDefault(num, 0) + 1);
+
+        }
+
+        //最小堆
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
+            }
+        });
+
+        //遍历map
+        for (Map.Entry<Integer, Integer> entry : occ.entrySet()) {
+            int num = entry.getKey(), count = entry.getValue();
+            if (minHeap.size() == k) {
+                //和堆顶元素比较出现次数
+                if (minHeap.peek()[1] < count) {
+                    minHeap.poll();
+                    minHeap.offer(new int[]{num, count});
+                }
+
+            } else {
+                minHeap.offer(new int[]{num, count});
+            }
+        }
+        int[] res = new int[k];
+
+        for (int i = 0; i < res.length; i++) {
+
+            res[i] = minHeap.poll()[0];
+
+        }
+
+        return res;
+
     }
 }
