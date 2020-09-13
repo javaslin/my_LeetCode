@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 public class Test {
 
 
@@ -19,6 +21,9 @@ public class Test {
 
 
     public static void main(String[] args) {
+
+
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
 
 
         for (int i = 0; i < 5; i++) {
