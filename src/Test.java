@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class Test {
@@ -22,17 +25,22 @@ public class Test {
 
     public static void main(String[] args) {
 
+//        List<String> list=new ArrayList<>();
+//        list.add("aaa");
+//        System.out.println(list.get(0));
 
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+
+//
+//
+//        String str="test/161/feedback我";
+////        System.out.println(str.substring(str.lastIndexOf("/")));
+//
+//        System.out.println(str.getBytes().length);
 
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println(i);
-        }
+        Long maxFileLength = Long.MAX_VALUE;
+        System.out.println(maxFileLength);
 
-        for (int i = 0; i < 5; ++i) {
-            System.out.println(i);
-        }
 
     }
 }
