@@ -36,6 +36,36 @@ public class Test {
         return res;
     }
 
+    public int findUnsortedSubarray(int[] nums) {
+
+
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int[] copyArray = Arrays.copyOf(nums, nums.length);
+
+        Arrays.sort(copyArray);
+
+        int start = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (copyArray[i] != nums[i]) {
+                start = i;
+                break;
+            }
+
+        }
+        int end = 0;
+        for (int i = nums.length; i > 0; i--) {
+            if (copyArray[i] != nums[i]) {
+                end = i;
+                break;
+            }
+
+        }
+        return end - start + 2;
+    }
+
 
     public static void main(String[] args) {
 
@@ -68,9 +98,41 @@ public class Test {
 //        System.out.println(stack.getLast());
 
 
-        int[] a = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
+//        int[] a = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
+//
+//        dailyTemperatures(a);
 
-        dailyTemperatures(a);
+
+//        System.out.println(uniquePaths(7,3));
+//        System.out.println(Integer.MAX_VALUE);
+//        PriorityQueue<Integer> minHeap=new PriorityQueue<>();
+//
+//        minHeap.offer(5);
+//        minHeap.offer(3);
+//        System.out.println(minHeap.peek());
+
+//        Map<String, Integer> map = new TreeMap<>(new Comparator<String>() {
+//            public int compare(String obj1, String obj2) {
+//                return obj1.compareTo(obj2);
+//            }
+//        });
+//        map.put("1",1);
+//        map.put("1",2);
+////        map.put("1077325",1);
+////        map.put("1134583",1);
+////        map.put("144176",1);
+//
+//        for (Map.Entry<String,Integer> entry:map.entrySet()) {
+//            System.out.println(entry.getKey()+"   "+entry.getValue());
+//        }
+
+
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(5);
+        stack.push(4);
+
+        System.out.println(stack.get(0));
 
 
     }
