@@ -1,4 +1,4 @@
-package 模板;
+package 模板.最短路;
 
 
 import java.io.BufferedReader;

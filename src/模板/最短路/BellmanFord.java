@@ -1,11 +1,9 @@
-package 模板;
+package 模板.最短路;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-
-
 /*
 Acwing 853
  */
