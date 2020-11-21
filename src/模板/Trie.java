@@ -3,23 +3,7 @@ package 模板;
 public class Trie {
 
     public static final int SIZE = 26;
-
-    public static class TrieNode {
-        TrieNode[] children = new TrieNode[SIZE];
-
-        int times;
-
-        TrieNode() {
-            times = 0;
-            for (int i = 0; i < SIZE; i++) {
-                children[i] = null;
-            }
-        }
-    }
-
-
     public static TrieNode root = new TrieNode();
-
 
     public static void insert(String word) {
         TrieNode node = root;
@@ -45,5 +29,22 @@ public class Trie {
         }
 
         return node.times;
+    }
+
+    public static class TrieNode {
+        TrieNode[] children = new TrieNode[SIZE];
+
+        int times;
+
+        TrieNode() {
+            times = 0;
+            for (int i = 0; i < SIZE; i++) {
+                children[i] = null;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
