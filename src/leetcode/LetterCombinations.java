@@ -8,48 +8,36 @@ import java.util.Map;
 public class LetterCombinations {
 
 
-    public static void main(String[] args) {
-        letterCombinations("23");
+    static HashMap<String, String> map = new HashMap<String, String>() {
+        {
+            put("2", "abc");
+            put("3", "def");
+            put("4", "ghi");
+            put("5", "jkl");
+            put("6", "mno");
+            put("7", "pqrs");
+            put("8", "tuv");
+            put("9", "wxyz");
+        }
+    };
+    static List<String> ans = new ArrayList<>();
+
+    static void dfs(String digits, int u, String path) {
+        if (u == digits.length()) {
+            ans.add(path);
+            return;
+        }
+        String t = map.get(digits.substring(u, u + 1));
+        for (int i = 0; i < t.length(); i++) {
+            dfs(digits, u + 1, path + t.charAt(i));
+        }
     }
 
-
-    public static List<String> letterCombinations(String digits) {
-
-        if (digits.length() == 0) {
-            return new ArrayList<>();
-        }
-
-        Map<Character, String> phoneMap = new HashMap<Character, String>() {{
-            put('2', "abc");
-            put('3', "def");
-            put('4', "ghi");
-            put('5', "jkl");
-            put('6', "mno");
-            put('7', "pqrs");
-            put('8', "tuv");
-            put('9', "wxyz");
-        }};
-
-        List<List<String>> list = new ArrayList<>();
-        for (int i = 0; i < digits.length(); i++) {
-            char num = digits.charAt(i);
-            List<String> state0 = new ArrayList<>();
-            String letter = phoneMap.get(num);
-            for (int j = 0; j < letter.length(); j++) {
-                state0.add(String.valueOf(letter.charAt(j)));
-            }
-            list.add(state0);
-        }
-
-        List<String> res = new ArrayList<>();
-        for (int j = 0; j < 3; j++) {
-            for (int i = 0; i < list.size(); i++) {
-
-            }
-        }
-
-        return res;
-
-
+    public List<String> letterCombinations(String digits) {
+        ans.clear();
+        int n = digits.length();
+        if (n == 0) return ans;
+        dfs(digits, 0, "");
+        return ans;
     }
 }
