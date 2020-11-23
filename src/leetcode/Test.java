@@ -132,13 +132,14 @@ public class Test {
 //        }
 
 
-        Stack<Integer> stack = new Stack<>();
+//        Stack<Integer> stack = new Stack<>();
+//
+//        stack.push(5);
+//        stack.push(4);
+//
+//        System.out.println(stack.get(0));
 
-        stack.push(5);
-        stack.push(4);
 
-        System.out.println(stack.get(0));
-
-
+        System.out.println("" + 'a' + 'c');
     }
 }

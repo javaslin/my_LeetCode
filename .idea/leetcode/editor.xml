@@ -19,6 +19,22 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[131]分割回文串.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[131]分割回文串.java" />
+              <option name="questionId" value="131" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[134]加油站.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[134]加油站.java" />
+              <option name="questionId" value="134" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[136]只出现一次的数字.java">
           <value>
             <LeetcodeEditor>
@@ -104,6 +120,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[29]两数相除.java" />
               <option name="questionId" value="29" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[2]两数相加.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../../app/LeetcodeTemp/leetcode/editor/cn/[2]两数相加.java" />
+              <option name="questionId" value="2" />
             </LeetcodeEditor>
           </value>
         </entry>
