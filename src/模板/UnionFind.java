@@ -33,8 +33,6 @@ public class UnionFind {
 
         int a = sc.nextInt();
         int b = sc.nextInt();
-
-
         //将两点所在集合 合并
         p[find(a)] = p[find(b)];
         //维护两集合点的数量

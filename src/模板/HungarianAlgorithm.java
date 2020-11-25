@@ -32,14 +32,17 @@ public class HungarianAlgorithm {
 
     private static boolean find(int u) {
 
+
+        // 遍历x号男生看上的所有女生
+
         for (int i = h[u]; i != -1; i = ne[i]) {
 
             int j = e[i];
-            if (!st[j]) {
+            if (!st[j]) {// 防止重复匹配
 
                 st[j] = true;
-                if (match[j] == 0 || find(match[j])) {
-                    match[j] = u;
+                if (match[j] == 0 || find(match[j])) {// 如果j号女生还没有匹配到男生或者她匹配到的男生可以找到下家
+                    match[j] = u;// 就把j匹配给x
                     return true;
                 }
             }
