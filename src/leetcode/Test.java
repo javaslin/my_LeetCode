@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.Stack;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Test {
 
@@ -69,6 +70,13 @@ public class Test {
 
         }
         return end - start + 2;
+    }
+
+
+    public void change(AtomicInteger integer) {
+        integer.getAndIncrement();
+        integer.getAndIncrement();
+
     }
 
 
@@ -140,6 +148,16 @@ public class Test {
 //        System.out.println(stack.get(0));
 
 
-        System.out.println("" + 'a' + 'c');
+//        System.out.println("" + 'a' + 'c');
+
+
+        Test test = new Test();
+        AtomicInteger a = new AtomicInteger(0);
+
+        test.change(a);
+
+        System.out.println(a.get());
+
+
     }
 }

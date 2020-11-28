@@ -21,6 +21,10 @@ public class UnionFind {
         return p[x];
     }
 
+    private static void union(int x, int y) {
+        p[find(x)] = p[find(y)];
+    }
+
     public static void main(String[] args) {
 
 
