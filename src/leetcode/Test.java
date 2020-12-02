@@ -150,13 +150,21 @@ public class Test {
 
 //        System.out.println("" + 'a' + 'c');
 
+//
+//        Test test = new Test();
+//        AtomicInteger a = new AtomicInteger(0);
+//
+//        test.change(a);
+//
+//        System.out.println(a.get());
 
-        Test test = new Test();
-        AtomicInteger a = new AtomicInteger(0);
 
-        test.change(a);
+        String str = "  Bob    Loves  Alice   ";
 
-        System.out.println(a.get());
+        String[] s = str.trim().split(" ");
+
+        System.out.println(s.length);
+        Arrays.stream(s).forEach(num -> System.out.println(num.length()));
 
 
     }
