@@ -164,6 +164,8 @@ public class Test {
         String[] s = str.trim().split(" ");
 
         System.out.println(s.length);
+        StringBuilder sb = new StringBuilder();
+        sb.toString();
         Arrays.stream(s).forEach(num -> System.out.println(num.length()));
 
 
