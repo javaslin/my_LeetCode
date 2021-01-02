@@ -1,9 +1,6 @@
 package leetcode;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Test {
@@ -159,14 +156,19 @@ public class Test {
 //        System.out.println(a.get());
 
 
-        String str = "  Bob    Loves  Alice   ";
+//        String str = "  Bob    Loves  Alice   ";
+//
+//        String[] s = str.trim().split(" ");
+//
+//        System.out.println(s.length);
+//        StringBuilder sb = new StringBuilder();
+//        sb.toString();
+//        Arrays.stream(s).forEach(num -> System.out.println(num.length())
+//        a.toLowerCase().split("");
+//        char[] front=s.substring(0,half).toLowerCase().split("");
+//        char[] behind=s.substring(half,s.length()).toLowerCase().split("");
 
-        String[] s = str.trim().split(" ");
 
-        System.out.println(s.length);
-        StringBuilder sb = new StringBuilder();
-        sb.toString();
-        Arrays.stream(s).forEach(num -> System.out.println(num.length()));
 
 
     }
