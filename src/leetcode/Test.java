@@ -169,6 +169,9 @@ public class Test {
 //        char[] behind=s.substring(half,s.length()).toLowerCase().split("");
 
 
+        System.out.println(0&-1);
+
+
 
 
     }
