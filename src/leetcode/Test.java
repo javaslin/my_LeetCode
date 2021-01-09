@@ -169,7 +169,10 @@ public class Test {
 //        char[] behind=s.substring(half,s.length()).toLowerCase().split("");
 
 
-        System.out.println(0&-1);
+//        System.out.println(0&-1);
+
+        String str="/../";
+        System.out.println(str.split("//").length);
 
 
 
