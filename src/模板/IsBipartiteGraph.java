@@ -34,7 +34,7 @@ public class IsBipartiteGraph {
         color[u] = c;
         for (int i = h[u]; i != -1; i = ne[i]) {
             int j = e[i];
-            if (color[j] != 0) {
+            if (color[j] == 0) {
                 if (!dfs(j, 3 - c)) return false;
             } else if (color[j] == c) return false;
 
@@ -66,9 +66,9 @@ public class IsBipartiteGraph {
 
         boolean flag = true;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
 
-            if (color[i] != 0) {
+            if (color[i] == 0) {
                 if (!dfs(i, 1)) {
                     flag = false;
                     break;
@@ -76,6 +76,8 @@ public class IsBipartiteGraph {
             }
 
         }
+        if(flag) System.out.println("Yes");
+        else System.out.println("No");
 
 
     }
