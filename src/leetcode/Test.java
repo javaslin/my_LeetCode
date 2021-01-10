@@ -171,7 +171,7 @@ public class Test {
 
 //        System.out.println(0&-1);
 
-        String str="/../";
+        String str="22346735";
         System.out.println(str.split("//").length);
 
 
