@@ -8,7 +8,7 @@ import java.util.Arrays;
 /*
 Acwing 860 染色法判断二分图
  */
-public class IsBipartiteGraph {
+public class    IsBipartiteGraph {
 
     static final int N = 100010, M = 200010;
 

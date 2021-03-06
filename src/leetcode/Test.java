@@ -175,11 +175,21 @@ public class Test {
 //        System.out.println(str.split("//").length);
 
 
-        for (int i = 1; i <4; i++) {
-            System.out.println(i);
-        }
+//        for (int i = 1; i <4; i++) {
+//            System.out.println(i);
+//        }
 
 
+//        System.out.println(Integer.MAX_VALUE);
+
+
+//        String str1="eenpnn";
+
+        Stack<Character> stack=new Stack<>();
+        stack.push('[');
+//        String str2="npnnee";
+//
+//        System.out.println(str1.compareTo(str2));
 
 
     }

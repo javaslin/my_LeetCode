@@ -35,7 +35,7 @@ public class Bag01OneDimension {
         for (int i = 1; i <= n; i++) {
             for (int j = m; j >= v[i]; j--) {
                 f[j] = Math.max(f[j], f[j - v[i]] + w[i]);
-
+                System.out.println("f"+"["+j+"]"+"="+f[j]);
             }
         }
 

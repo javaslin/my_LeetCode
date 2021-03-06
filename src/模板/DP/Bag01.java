@@ -34,10 +34,15 @@ public class Bag01 {
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= m; j++) {
                 f[i][j] = f[i - 1][j];
-                if (j >= v[i]) f[i][j] = Math.max(f[i][j], f[i - 1][j - v[i]] + w[i]);
+//                System.out.println("f[i][j]="+f[i][j]+"f[i-1][j]="+f[i-1][j]);
+//                System.out.println("f["+i+"]"+"["+j+"]"+"="+"f["+(i-1)+"]"+"["+j+"]");
+                if (j >= v[i]) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j - v[i]] + w[i]);
+                }
+                System.out.println("f["+i+"]"+"["+j+"]"+"="+f[i][j]);
             }
         }
 
-        System.out.println(f[n][m]);
+//        System.out.println(f[n][m]);
     }
 }
