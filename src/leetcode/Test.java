@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.math.BigInteger;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -77,7 +80,7 @@ public class Test {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 //        List<String> list=new ArrayList<>();
 //        list.add("aaa");
@@ -185,12 +188,119 @@ public class Test {
 
 //        String str1="eenpnn";
 
-        Stack<Character> stack=new Stack<>();
-        stack.push('[');
+//        Stack<Character> stack=new Stack<>();
+//        stack.push('[');
 //        String str2="npnnee";
 //
 //        System.out.println(str1.compareTo(str2));
 
 
+//        Date date1=new Date();
+//        Thread.sleep(30000);
+//        Date date2=new Date();
+//
+//        System.out.println(date1.getTime()-date2.getTime());
+
+
+//        System.out.println(Math.abs(-2147483648-2147483647));
+//        int[][] f=new int[1][1];
+
+
+//        System.out.println(true);
+//
+//        BigInteger a=new BigInteger("0002");
+//        BigInteger subtract = a.subtract(BigInteger.ONE);
+//        System.out.println(subtract);
+
+
+//        System.out.println(Integer.MAX_VALUE);
+
+
+
+        String str="12:01";
+
+        System.out.println(str.split(":")[1]);
+
     }
+    public boolean splitString(String s) {
+        for (int i = 1; i < s.length(); i++) {
+            if (dfs(i, new BigInteger(s.substring(0, i)), s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean dfs(int start, BigInteger prev, String s) {
+        if (start == s.length()) {
+            return true;
+        } else {
+            for (int i = start + 1; i <= s.length(); i++) {
+                if (new BigInteger(s.substring(start, i)).equals(prev.subtract(BigInteger.ONE))
+                        && dfs(i, new BigInteger(s.substring(start, i)), s)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public int numberOfRounds(String startTime, String finishTime)  {
+
+        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
+
+        String s = startTime.split(":")[1];
+        int startHour= Integer.parseInt(startTime.split(":")[0]);
+        int startM=Integer.parseInt(s);
+        if(startM>0&&startM<15){
+            startM=15;
+        }else if(startM>15&&startM<30){
+            startM=30;
+        }else if(startM>30&&startM<45){
+            startM=45;
+        }else{
+            startM=0;
+            startHour+=1;
+        }
+
+        String s1 = finishTime.split(":")[1];
+        int endHour=Integer.parseInt(finishTime.split(":")[0]);
+        int endM=Integer.parseInt(s1);
+        if(endM>0&&endM<15){
+            endM=0;
+            if(endHour!=0){
+                endHour-=1;
+            }else {
+                endHour=23;
+            }
+        }else if(endM>15&&endM<30){
+            endM=15;
+        }else if(endM>30&&endM<45){
+            endM=30;
+        }else{
+            endM=45;
+        }
+
+        try {
+            if(format.parse(finishTime).getTime()<format.parse(startTime).getTime()){
+                endHour+=24;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(endHour);
+
+
+
+
+        int startMinute=startHour*60+startM;
+        int endMinute=endHour*60+endM;
+
+        return (endMinute-startMinute)/15;
+
+
+
+    }
+
 }

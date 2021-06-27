@@ -13,6 +13,7 @@ public class QuickSort {
 
         int mid = arr[l + ((r - l) >> 1)];//中间的数
 
+        System.out.println("mid"+mid);
         while (i < j) {
             do {
                 i++;
@@ -22,11 +23,14 @@ public class QuickSort {
                 j--;
             } while (arr[j] > mid);
 
+            System.out.println("i:"+i+",j:"+j);
             if (i < j) {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
+            Arrays.stream(arr).forEach(num -> System.out.print(num+" "));
+            System.out.println();
         }
 
 
@@ -40,9 +44,11 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] arr = new int[]{3, 2, 6, 7, 3, 2, 1, 9};
+        Arrays.stream(arr).forEach(num -> System.out.print(num+" "));
+        System.out.println();
         quickSort(arr, 0, arr.length - 1);
 
-        Arrays.stream(arr).forEach(num -> System.out.println(num));
+
 
     }
 }

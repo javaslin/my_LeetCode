@@ -15,10 +15,6 @@ public class NumsArrange {
         path = new int[n];
         st = new boolean[n + 1];
         dfs(0);
-
-        for (int i : path) {
-            System.out.println(i);
-        }
     }
 
     private static void dfs(int u) {
