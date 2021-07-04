@@ -37,6 +37,7 @@ public class MonotonyStack {
     public static void monotonyStackAPI(int[] nums){
         Stack<Integer> stack=new Stack<>();
         for (int i = 0; i < nums.length ; i++) {
+            //3,7,2,5,1,1,4,9
             while (!stack.isEmpty() && stack.peek()>=nums[i]) stack.pop();
             if(!stack.isEmpty()){
                 System.out.print(stack.peek()+" ");
@@ -44,6 +45,10 @@ public class MonotonyStack {
                 System.out.print("-1 ");
             }
             stack.push(nums[i]);
+        }
+        System.out.println();
+        while (!stack.isEmpty()){
+            System.out.print(stack.pop()+" ");
         }
     }
 

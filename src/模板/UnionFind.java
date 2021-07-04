@@ -22,7 +22,7 @@ public class UnionFind {
     }
 
     private static void union(int x, int y) {
-        p[find(x)] = p[find(y)];
+        p[find(x)] = find(y);
     }
 
     public static void main(String[] args) {
@@ -38,7 +38,7 @@ public class UnionFind {
         int a = sc.nextInt();
         int b = sc.nextInt();
         //将两点所在集合 合并
-        p[find(a)] = p[find(b)];
+        p[find(a)] = find(b);
         //维护两集合点的数量
         size[find(a)] += size[find(b)];
     }
