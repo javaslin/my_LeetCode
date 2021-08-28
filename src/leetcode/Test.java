@@ -25,6 +25,39 @@ public class Test {
 
     }
 
+    public int rand10() {
+        while (true){
+            int num=(rand7()-1)*7+rand7();
+
+            //如果在40以内，那就直接返回
+            if(num <= 40){
+                return 1 + num % 10;
+            }
+            // 说明刚才生成的在41-49之间，利用随机数再操作一遍
+            num = (num - 40 - 1) * 7 + rand7();
+            if(num <= 60){
+                return 1 + num % 10;
+            }
+            // 说明刚才生成的在61-63之间，利用随机数再操作一遍
+            num = (num - 60 - 1) * 7 + rand7();
+            if(num <= 20){
+                return 1 + num % 10;
+            }
+
+        }
+    }
+
+    public int rand7(){
+
+        while (true){
+            int num=10;
+            if(num>100){
+                return 10;
+            }
+        }
+
+    }
+
     public static int[] dailyTemperatures(int[] T) {
 
         int n = T.length;
@@ -82,144 +115,16 @@ public class Test {
 
     public static void main(String[] args) throws InterruptedException {
 
-//        List<String> list=new ArrayList<>();
-//        list.add("aaa");
-//        System.out.println(list.get(0));
-
-
-//
-//
-//        String str="test/161/feedback我";
-////        System.out.println(str.substring(str.lastIndexOf("/")));
-//
-//        System.out.println(str.getBytes().length);
-
-//
-//        Long maxFileLength = Long.MAX_VALUE;
-//        System.out.println(maxFileLength);
-
-//
-//        Map<Character,Integer> map=new HashMap<>();
-//        int a=-9;
-//        System.out.println(~a+1);
-
-
-//        Deque<Integer> stack=new ArrayDeque<>();
-////        stack.addLast(1);
-////        stack.addLast(2);
-////        stack.addLast(3);
-//        System.out.println(stack.getLast());
-
-
-//        int[] a = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
-//
-//        dailyTemperatures(a);
-
-
-//        System.out.println(uniquePaths(7,3));
-//        System.out.println(Integer.MAX_VALUE);
-//        PriorityQueue<Integer> minHeap=new PriorityQueue<>();
-//
-//        minHeap.offer(5);
-//        minHeap.offer(3);
-//        System.out.println(minHeap.peek());
-
-//        Map<String, Integer> map = new TreeMap<>(new Comparator<String>() {
-//            public int compare(String obj1, String obj2) {
-//                return obj1.compareTo(obj2);
-//            }
-//        });
-//        map.put("1",1);
-//        map.put("1",2);
-////        map.put("1077325",1);
-////        map.put("1134583",1);
-////        map.put("144176",1);
-//
-//        for (Map.Entry<String,Integer> entry:map.entrySet()) {
-//            System.out.println(entry.getKey()+"   "+entry.getValue());
-//        }
-
-
-//        Stack<Integer> stack = new Stack<>();
-//
-//        stack.push(5);
-//        stack.push(4);
-//
-//        System.out.println(stack.get(0));
-
-
-//        System.out.println("" + 'a' + 'c');
-
-//
-//        Test test = new Test();
-//        AtomicInteger a = new AtomicInteger(0);
-//
-//        test.change(a);
-//
-//        System.out.println(a.get());
-
-
-//        String str = "  Bob    Loves  Alice   ";
-//
-//        String[] s = str.trim().split(" ");
-//
-//        System.out.println(s.length);
-//        StringBuilder sb = new StringBuilder();
-//        sb.toString();
-//        Arrays.stream(s).forEach(num -> System.out.println(num.length())
-//        a.toLowerCase().split("");
-//        char[] front=s.substring(0,half).toLowerCase().split("");
-//        char[] behind=s.substring(half,s.length()).toLowerCase().split("");
-
-
-//        System.out.println(0&-1);
-
-//        String str="22346735";
-//        System.out.println(str.split("//").length);
-
-
-//        for (int i = 1; i <4; i++) {
-//            System.out.println(i);
-//        }
-
-
-//        System.out.println(Integer.MAX_VALUE);
-
-
-//        String str1="eenpnn";
-
-//        Stack<Character> stack=new Stack<>();
-//        stack.push('[');
-//        String str2="npnnee";
-//
-//        System.out.println(str1.compareTo(str2));
-
-
-//        Date date1=new Date();
-//        Thread.sleep(30000);
-//        Date date2=new Date();
-//
-//        System.out.println(date1.getTime()-date2.getTime());
-
-
-//        System.out.println(Math.abs(-2147483648-2147483647));
-//        int[][] f=new int[1][1];
-
-
-//        System.out.println(true);
-//
-//        BigInteger a=new BigInteger("0002");
-//        BigInteger subtract = a.subtract(BigInteger.ONE);
-//        System.out.println(subtract);
-
-
-//        System.out.println(Integer.MAX_VALUE);
 
 
 
-        String str="12:01";
+//        String str="{\"jobId\":49,\"params\":{\"filterLogicExp\":\"(condition1)\",\"mainOneArray\":[{\"filterConditionName\":\"condition1\",\"formName\":\"appForm\"}],\"outputPath\":\"/datacloud/dss/atm/msp-job-service/202107/151507251791741745020/output\",\"name\":\"会计学习AppList\",\"deptId\":4.0,\"excludeCheatedIds\":0.0,\"mainTwoArray\":[],\"conditions\":[{\"exps\":[{\"outputFilter\":\"21\",\"type\":\"device\",\"expCode\":\"02000\"}],\"expType\":\"outputDetail\"}";
+////
+//        System.out.println(str.replace(".0",""));
 
-        System.out.println(str.split(":")[1]);
+        String str="/a/b";
+        System.out.println(str.replace("/",""));
+
 
     }
     public boolean splitString(String s) {
